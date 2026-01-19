@@ -25,3 +25,28 @@ class SLinkedList:
             self.tail = new_node
 
         self.length += 1
+
+    def __str__(self):
+        temp_node = self.head
+        result = ''
+
+        while temp_node is not None:
+            result += str(temp_node.data)
+            if temp_node.next:
+                result += ' -> '
+
+            temp_node = temp_node.next
+
+        return result
+
+
+# Usage
+new_list = SLinkedList()
+new_list.append(10)
+new_list.append(20)
+new_list.append(30)
+
+print(new_list.head.data)
+print(new_list.tail.data)
+print(new_list.length)
+print(new_list)
