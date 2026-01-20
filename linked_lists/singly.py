@@ -95,6 +95,47 @@ class SLinkedList:
         # time complexity -> O(n)
         # space complexity -> O(1)
 
+    def search(self, data):
+        curr_node = self.head
+        curr_index = 0
+
+        while curr_node:
+            if curr_node.data == data:
+                print(f"{data} was found in the list at index {curr_index}")
+                return
+            curr_node = curr_node.next
+            curr_index += 1
+
+        print(f"{data} was not found in the list")
+
+        # time complexity -> O(n)
+        # space complexity -> O(1)
+
+    def get(self, index):
+        # empty list check
+        if self.length == 0:
+            print("This is an empty list")
+            return
+        
+        if index == -1:
+            print(f"The data at index {index} is {self.tail.data}")
+            return self.tail
+        
+        # invalid index check
+        if index < -1 or index >= self.length:
+            print("Invalid index")
+            return
+        
+        curr_node = self.head
+        for _ in range(index):
+            curr_node = curr_node.next
+
+        print(f"The data at index {index} is {curr_node.data}")
+        return curr_node
+    
+        # time complexity -> O(n)
+        # space complexity -> O(1)
+
     def __str__(self):
         temp_node = self.head
         result = ''
@@ -111,6 +152,8 @@ class SLinkedList:
 
 # Usage
 new_list = SLinkedList()
+new_list.get(-1)
+
 new_list.append(10)
 new_list.append(10)
 new_list.append(10)
@@ -118,8 +161,12 @@ new_list.prepend(20)
 new_list.append(20)
 new_list.insert(10, 5)
 
+new_list.search(10)
+
 print(new_list.head.data)
 print(new_list.tail.data)
 print(new_list.length)
 print(new_list)
 new_list.transverse()
+
+new_list.get(-1)
