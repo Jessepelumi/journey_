@@ -13,8 +13,8 @@ class SLinkedList:
         self.tail = None
         self.length = 0
 
-    def append(self, value):
-        new_node = Node(value)
+    def append(self, data):
+        new_node = Node(data)
 
         # first check if the list is empty
         if not self.head:
@@ -30,7 +30,7 @@ class SLinkedList:
         temp_node = self.head
         result = ''
 
-        while temp_node is not None:
+        while temp_node:
             result += str(temp_node.data)
             if temp_node.next:
                 result += ' -> '
