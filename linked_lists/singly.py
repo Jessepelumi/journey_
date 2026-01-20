@@ -5,6 +5,8 @@ class Node:
         self.data = data
         self.next = None
 
+    # time & space complexity -> O(1)
+
 # List class
 # The two major components are the head and tail
 class SLinkedList:
@@ -26,6 +28,8 @@ class SLinkedList:
 
         self.length += 1
 
+        # time & space complexity -> O(1)
+
     def prepend(self, data):
         new_node = Node(data)
 
@@ -37,6 +41,8 @@ class SLinkedList:
             self.head = new_node
 
         self.length += 1
+
+        # time & space complexity -> O(1)
 
     def insert(self, data, index):
         new_node = Node(data)
@@ -68,6 +74,27 @@ class SLinkedList:
 
         self.length += 1
 
+        # time complexity -> O(n)
+        # space complexity -> O(1)
+
+    def transverse(self):
+        curr_node = self.head
+        if not self.head:
+            print("This list is empty")
+            return
+
+        while curr_node:
+            print(curr_node.data)
+            curr_node = curr_node.next
+
+        # for loop method
+        # for _ in range(self.length):
+        #     print(curr_node.data)
+        #     curr_node = curr_node.next
+
+        # time complexity -> O(n)
+        # space complexity -> O(1)
+
     def __str__(self):
         temp_node = self.head
         result = ''
@@ -95,3 +122,4 @@ print(new_list.head.data)
 print(new_list.tail.data)
 print(new_list.length)
 print(new_list)
+new_list.transverse()
