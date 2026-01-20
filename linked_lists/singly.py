@@ -118,7 +118,7 @@ class SLinkedList:
             return
         
         if index == -1:
-            print(f"The data at index {index} is {self.tail.data}")
+            print(f"The tail node's data is {self.tail.data}")
             return self.tail
         
         # invalid index check
@@ -133,6 +133,46 @@ class SLinkedList:
         print(f"The data at index {index} is {curr_node.data}")
         return curr_node
     
+        # time complexity -> O(n)
+        # space complexity -> O(1)
+
+    # def set_value(self, index, data):
+    #     # empty list
+    #     if self.length == 0:
+    #         print("This list is empty")
+    #         return
+        
+    #     if index == -1:
+    #         self.tail.data = data
+    #         print(f"tail updated to {self.tail.data}")
+    #         return
+        
+    #     # invalid index
+    #     if index < -1 or index >= self.length:
+    #         print("Invalid index")
+    #         return
+
+    #     curr_node = self.head
+    #     for _ in range(index):
+    #         curr_node = curr_node.next
+
+    #     curr_node.data = data
+    #     print(f"updated to {curr_node.data}")
+
+    #     # time complexity -> O(n)
+    #     # space complexity -> O(1)
+
+    # set_value method using get method
+    def set_value(self, index, data):
+        target_node = self.get(index)
+
+        if target_node:
+            target_node.data = data
+            print(f"The data at index {index} has been updated to {target_node.data}")
+            return
+
+        print("Target node was not found")
+
         # time complexity -> O(n)
         # space complexity -> O(1)
 
@@ -152,21 +192,23 @@ class SLinkedList:
 
 # Usage
 new_list = SLinkedList()
-new_list.get(-1)
 
-new_list.append(10)
 new_list.append(10)
 new_list.append(10)
 new_list.prepend(20)
 new_list.append(20)
-new_list.insert(10, 5)
+new_list.insert(30, 4)
 
-new_list.search(10)
-
-print(new_list.head.data)
-print(new_list.tail.data)
-print(new_list.length)
 print(new_list)
-new_list.transverse()
 
-new_list.get(-1)
+# new_list.search(10)
+
+new_list.set_value(3, 100)
+
+# print(new_list.head.data)
+# print(new_list.tail.data)
+# print(new_list.length)
+print(new_list)
+# new_list.transverse()
+
+#new_list.get(-1)
