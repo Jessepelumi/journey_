@@ -26,6 +26,48 @@ class SLinkedList:
 
         self.length += 1
 
+    def prepend(self, data):
+        new_node = Node(data)
+
+        if not self.head:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+
+        self.length += 1
+
+    def insert(self, data, index):
+        new_node = Node(data)
+
+        # invalid index
+        if index < 0 or index > self.length:
+            print("Invalid index!")
+            return
+
+        # assign new node to head and tail if list is empty
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        # insert at the beginning of the list if index is 0
+        elif index == 0:
+            new_node.next = self.head
+            self.head = new_node
+        else:
+            curr_node = self.head
+            for _ in range(index - 1):
+                curr_node = curr_node.next
+
+            new_node.next = curr_node.next
+            curr_node.next = new_node
+
+            # check if new node is the new tail
+            if not new_node.next:
+                self.tail = new_node
+
+        self.length += 1
+
     def __str__(self):
         temp_node = self.head
         result = ''
@@ -43,8 +85,11 @@ class SLinkedList:
 # Usage
 new_list = SLinkedList()
 new_list.append(10)
+new_list.append(10)
+new_list.append(10)
+new_list.prepend(20)
 new_list.append(20)
-new_list.append(30)
+new_list.insert(10, 5)
 
 print(new_list.head.data)
 print(new_list.tail.data)
