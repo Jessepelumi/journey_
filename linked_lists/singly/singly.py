@@ -196,6 +196,32 @@ class SLinkedList:
 
         # time & space complexity -> O(1)
 
+    def pop(self):
+        if self.length == 0:
+            print("No node popped. This is an empty list")
+            return
+
+        popped_node = self.tail
+
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        else:
+            curr_node = self.head
+
+            while curr_node.next is not self.tail:
+                curr_node = curr_node.next
+
+            self.tail = curr_node
+            curr_node.next = None
+
+        self.length -= 1
+
+        print(popped_node, popped_node.data)
+
+        # time complexity -> O(n)
+        # space complexity -> O(1)
+
     def __str__(self):
         temp_node = self.head
         result = ''
@@ -215,9 +241,9 @@ new_list = SLinkedList()
 
 new_list.append(10)
 # new_list.append(10)
-# new_list.prepend(20)
+new_list.prepend(20)
 # new_list.append(20)
-# new_list.insert(30, 4)
+new_list.insert(30, 1)
 
 print(new_list)
 
@@ -230,7 +256,7 @@ print(new_list)
 # print(new_list.length)
 #print(new_list)
 
-new_list.pop_first()
+new_list.pop()
 #print(new_list.head.data)
 print(new_list)
 # new_list.transverse()
