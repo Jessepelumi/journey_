@@ -84,6 +84,24 @@ class CSLinkedList:
         # time complexity -> O(n)
         # space complexity -> O(1)
 
+    def transversal(self):
+        if self.length == 0:
+            print("Empty list")
+            return
+        
+        curr_node = self.head
+        while curr_node:
+            print(curr_node.data)
+
+            if curr_node.next is self.head:
+                break
+
+            curr_node = curr_node.next
+
+        # time complexity -> O(n)
+        # space complexity -> O(1)
+
+
     def __str__(self):
         if self.length == 0:
             return "Empty list"
@@ -111,3 +129,5 @@ new_list.insert(30, 0)
 
 print(new_list)
 print(new_list.head.data)
+
+new_list.transversal()
