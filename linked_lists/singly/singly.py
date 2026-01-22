@@ -270,7 +270,7 @@ class SLinkedList:
 
             temp_node = temp_node.next
 
-        return " -> ".join(result)
+        return " -> ".join(result) + " -> (None)"
 
 
 # Usage
