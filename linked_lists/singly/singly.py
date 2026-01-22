@@ -259,17 +259,18 @@ class SLinkedList:
         # time & space complexity -> O(1)
 
     def __str__(self):
+        if self.length == 0:
+            return "Empty list"
+
         temp_node = self.head
-        result = ''
+        result = []
 
         while temp_node:
-            result += str(temp_node.data)
-            if temp_node.next:
-                result += ' -> '
+            result.append(str(temp_node.data))
 
             temp_node = temp_node.next
 
-        return result
+        return " -> ".join(result)
 
 
 # Usage
