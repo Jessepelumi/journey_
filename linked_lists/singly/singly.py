@@ -222,6 +222,33 @@ class SLinkedList:
         # time complexity -> O(n)
         # space complexity -> O(1)
 
+    def remove(self, index):
+        # if self.length == 0:
+        #     print("No node removed. This is an empty list")
+        #     return
+        
+        # # invalid index 
+        # if index < 0 or index >= self.length:
+        #     print("Invalid index")
+        #     return
+        
+        prev_node = self.get(index - 1)
+        if not prev_node:
+            return
+        
+        popped_node = prev_node.next
+
+        if self.length == 1:
+            self.head = self.tail = None
+        elif popped_node is self.tail:
+            self.tail = prev_node
+            prev_node.next = None
+        else:
+            prev_node.next = popped_node.next
+            popped_node.next = None
+
+        self.length -= 1
+
     def __str__(self):
         temp_node = self.head
         result = ''
@@ -256,7 +283,7 @@ print(new_list)
 # print(new_list.length)
 #print(new_list)
 
-new_list.pop()
+new_list.remove(0)
 #print(new_list.head.data)
 print(new_list)
 # new_list.transverse()
