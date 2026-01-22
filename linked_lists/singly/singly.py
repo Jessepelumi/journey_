@@ -118,7 +118,7 @@ class SLinkedList:
             return
         
         if index == -1:
-            print(f"The tail node's data is {self.tail.data}")
+            # print(f"The tail node's data is {self.tail.data}")
             return self.tail
         
         # invalid index check
@@ -130,7 +130,7 @@ class SLinkedList:
         for _ in range(index):
             curr_node = curr_node.next
 
-        print(f"The data at index {index} is {curr_node.data}")
+        # print(f"The data at index {index} is {curr_node.data}")
         return curr_node
     
         # time complexity -> O(n)
@@ -192,7 +192,7 @@ class SLinkedList:
 
         self.length -= 1
 
-        print(popped_node, popped_node.data)
+        return popped_node
 
         # time & space complexity -> O(1)
 
@@ -217,37 +217,46 @@ class SLinkedList:
 
         self.length -= 1
 
-        print(popped_node, popped_node.data)
+        return popped_node
 
         # time complexity -> O(n)
         # space complexity -> O(1)
 
     def remove(self, index):
-        # if self.length == 0:
-        #     print("No node removed. This is an empty list")
-        #     return
-        
-        # # invalid index 
-        # if index < 0 or index >= self.length:
-        #     print("Invalid index")
-        #     return
-        
-        prev_node = self.get(index - 1)
-        if not prev_node:
+        if self.length == 0:
+            print("Empty list")
             return
         
-        popped_node = prev_node.next
+        if index < 0 or index >= self.length:
+            print("Invalid index")
+            return
 
-        if self.length == 1:
-            self.head = self.tail = None
-        elif popped_node is self.tail:
-            self.tail = prev_node
-            prev_node.next = None
+        # removing the first element 
+        if index == 0:
+            self.pop_first()
+        elif index == self.length - 1:
+            self.pop()
         else:
+            prev_node = self.get(index - 1)
+            popped_node = prev_node.next
+
             prev_node.next = popped_node.next
             popped_node.next = None
 
         self.length -= 1
+
+        # time complexity -> O(n)
+        # space complexity -> O(1)
+
+    def delete_all(self):
+        if self.length == 0:
+            print("Empty list")
+            return
+        
+        self.head = self.tail = None
+        self.length = 0
+
+        # time & space complexity -> O(1)
 
     def __str__(self):
         temp_node = self.head
@@ -267,25 +276,14 @@ class SLinkedList:
 new_list = SLinkedList()
 
 new_list.append(10)
-# new_list.append(10)
+new_list.append(10)
 new_list.prepend(20)
-# new_list.append(20)
+new_list.append(20)
 new_list.insert(30, 1)
 
 print(new_list)
 
-# new_list.search(10)
+new_list.delete_all()
 
-#new_list.set_value(3, 100)
-
-# print(new_list.head.data)
-# print(new_list.tail.data)
-# print(new_list.length)
-#print(new_list)
-
-new_list.remove(0)
-#print(new_list.head.data)
 print(new_list)
-# new_list.transverse()
-
-#new_list.get(-1)
+print(new_list.length)
