@@ -58,6 +58,19 @@ class DLinkedList:
         # time complexity -> O(n)
         # space complexity -> O(1)
 
+    def reverse_transversal(self):
+        curr_node = self.tail
+        if not self.head:
+            print("This is an empty list")
+            return
+        
+        while curr_node:
+            print(curr_node.data)
+            curr_node = curr_node.prev
+
+        # time complexity -> O(n)
+        # space complexity -> O(1)
+
     def __str__(self):
         if not self.head:
             return "Empty list"
@@ -78,5 +91,11 @@ new_list = DLinkedList()
 new_list.append(10)
 new_list.append(20)
 new_list.append(30)
+
+print("foward")
+new_list.transversal()
+
+print("backward")
+new_list.reverse_transversal()
 
 print(new_list)
