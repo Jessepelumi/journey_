@@ -71,6 +71,39 @@ class DLinkedList:
         # time complexity -> O(n)
         # space complexity -> O(1)
 
+    def insert(self, data, index):
+        new_node = Node(data)
+
+        if index < 0 or index > self.length:
+            print("Invalid index")
+            return
+        
+        if index == 0:
+            if self.length == 0:
+                self.head = new_node
+                self.tail = new_node
+            else:
+                new_node.next = self.head
+                self.head.prev = new_node
+                self.head = new_node
+        else:
+            curr_node = self.head
+            for _ in range(index - 1):
+                curr_node = curr_node.next
+
+            new_node.next = curr_node.next
+            new_node.prev = curr_node
+
+            if curr_node.next:
+                curr_node.next.prev = new_node
+                
+            curr_node.next = new_node
+
+            if not new_node.next:
+                self.tail = new_node
+
+        self.length += 1
+
     def __str__(self):
         if not self.head:
             return "Empty list"
