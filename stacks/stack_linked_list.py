@@ -10,7 +10,6 @@ class Node:
     def __init__(self, val):
         self.val = val
         self.next = None
-
         # time & space complexity -> O(1)
 
 # Stack class
@@ -30,7 +29,6 @@ class StackLinkedList:
             self.top = new_node
 
         self.length += 1
-
         # time & space complexity -> O(1)
 
     # remove an element from the top of the stack
@@ -47,5 +45,25 @@ class StackLinkedList:
 
         self.length -= 1
         return popped
+        # time & space complexity -> O(1)
 
+    # return the topmost element of the stack
+    def peek(self):
+        if not self.top:
+            return "Stack is empty"
+        
+        return self.top
+        # time & space complexity -> O(1)
+    
+    # check if stack is empty
+    def isEmpty(self):
+        return self.length == 0
+        # time & space complexity -> O(1)
+    
+    # clear the stack
+    def clear(self):
+        if self.top:
+            self.top = None
+
+        self.length = 0
         # time & space complexity -> O(1)
