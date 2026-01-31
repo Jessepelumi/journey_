@@ -1,5 +1,10 @@
 # Stack data structure using Python list
 
+"""
+In a stack implementation using Python list, the end of the list is used as the top of the stack. This allows push and pop operations to be performed in O(1) time, as append and pop operations on the end of the list are O(1) operations.
+Using the beginning of the list would require traversing the entire list, resulting in O(n) time complexity for these operations.
+"""
+
 # Stack class
 class Stack:
     def __init__(self):
