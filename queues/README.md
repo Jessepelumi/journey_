@@ -1,15 +1,20 @@
 ## Queue
 
-A **Queue** is a linear data structure that follows the First In First Out (LIFO) manner. That is, the first element in the queue is the first to be removed. 
+A **Queue** is a linear data structure that follows the First In First Out (FIFO) manner. That is, the first element in the queue is the first to be removed. 
 
 The queue data structure can be built using arrays/lists or linked lists.
 
-A good real life implementation of stacks is web pages in web browsers (the back button). The last inserted page is the first to be popped.
+A good real life example of queues is printer queue. The first document in the queue is the first to be printed.
 
-### Common Stack Operations
-- **Push**: add a new element to the stack.
-- **Pop**: remove the last inserted element in the stack.
-- **Peek**: returning the last inserted element in the stack without removing it.
-- **Is Empty**: to check if the stack is empty.
-- **Size**: to return the number of elements in the stack.
-- **Delete All**: to clear the stack or delete all the element in the stack.
+### Queue Implementation
+- Python Lists: Queue without capacity and Circular queue (queue with capacity)
+- Linked Lists
+
+### Common Queue Operations
+- **Create Queue**: create the queue.
+- **Enqueue**: insert an element to the queue.
+- **Dequeue**: remove the top element of the queue.
+- **Peek**: returns the first element of the queue without removing it.
+- **Is Empty**: to check if the queue is empty.
+- **Is Full**: to check if the queue has reached its max capacity.
+- **Delete Queue**: to clear the queue or delete all the element in the queue.
