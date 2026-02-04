@@ -9,6 +9,8 @@ Python has 3 built in standard libraries for queue creation.
 from collections import deque
 # Queue Module
 import queue as q
+# Multiprocessing Module
+from multiprocessing import Queue
 
 # create an empty queue with capacity
 c_queue = deque(maxlen = 3)
@@ -31,6 +33,7 @@ c_queue.clear()
 print(c_queue)
 
 
+""""""
 # create queue with queue module
 q_queue = q.Queue(maxsize=3)
 
@@ -44,3 +47,14 @@ print(q_queue.full())
 
 # remove the top element
 q_queue.get()
+
+
+""""""
+# create queue with multiprocessing module
+m_queue = Queue(maxsize=3)
+
+# add an element to the queue
+m_queue.put(5)
+
+# remove the top element of the queue
+m_queue.get()
