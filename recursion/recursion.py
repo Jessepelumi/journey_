@@ -12,7 +12,7 @@ def russianDoll(doll):
     else:
         return russianDoll(doll - 1)
     
-russianDoll(5)
+# russianDoll(5)
 
 """
 Recursive thinking helps break down big problems into smaller, manageable tasks.
@@ -26,3 +26,15 @@ Example of recursion problems:
 - Write code to list the n... 
 - Implement a method to compute all
 """
+
+# Factorial
+# Factorial formula -> n! = n * (n-1) * (n-2) * ... * 2 * 1
+# Simplified factorial formula -> n! = n * (n-1)!
+def factorial(n):
+    # if n == 0 or n == 1:
+    if n in [0, 1]:
+        return 1
+    else:
+        return n * factorial(n - 1) # n! = n * (n-1)!
+    
+print(factorial(5))
