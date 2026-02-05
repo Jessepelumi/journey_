@@ -31,10 +31,11 @@ Example of recursion problems:
 # Factorial formula -> n! = n * (n-1) * (n-2) * ... * 2 * 1
 # Simplified factorial formula -> n! = n * (n-1)!
 def factorial(n):
-    # if n == 0 or n == 1:
+    assert n >= 0 and int(n) == n, "Positive integers only!"
+
     if n in [0, 1]:
         return 1
     else:
         return n * factorial(n - 1) # n! = n * (n-1)!
     
-print(factorial(5))
+print(factorial(-5))
