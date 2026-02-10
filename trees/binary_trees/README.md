@@ -9,3 +9,11 @@ A binary tree is a hierarchical data structure in which each node has at most tw
 - **Syntax Tree:** A tree used in the representation of language syntax, especially in compilers, where nodes represent components of an expression or program.
 
 Binary trees form the basis for various other advanced data structures due to their simplicity and efficiency in organizing data.
+
+Some binary tree operations are:
+- **Creation:** Set up an empty tree or initialize it with a root.
+- **Insertion:** Add a node at an appropriate location.
+- **Deletion:** Remove a node and handle its children accordingly.
+- **Search:** Find a node with a specific value.
+- **Traversal:** Visit all nodes in a specific order (pre-order, in-order, post-order, or level-order).
+- **Deletion of Tree:** Completely remove all nodes from the tree.
