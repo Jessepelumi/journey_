@@ -1,5 +1,8 @@
 # Binary tree implementation using linked lists.
 
+# Queue linked list to implement level order traversal
+import helper_queue as hq
+
 # Tree node class
 class TreeNode:
     def __init__(self, val):
@@ -38,7 +41,7 @@ def preorder_traversal(root_node: TreeNode):
     # time complexity - O(n)
     # space complexity -> O(n) -> recursion uses function call stack 
 
-preorder_traversal(new_tree)
+# preorder_traversal(new_tree)
 
 # In-order traversal
 def inorder_traversal(root_node: TreeNode):
@@ -52,7 +55,7 @@ def inorder_traversal(root_node: TreeNode):
     # time complexity -> O(n)
     # space complexity -> O(n) -> recursion uses function call stack
 
-inorder_traversal(new_tree)
+# inorder_traversal(new_tree)
 
 # Post-order traversal
 def postorder_traversal(root_node: TreeNode):
@@ -66,4 +69,14 @@ def postorder_traversal(root_node: TreeNode):
     # time complexity -> O(n)
     # space complexity -> O(n)
 
-postorder_traversal(new_tree)
+# postorder_traversal(new_tree)
+
+# Level-order traversal
+def levelOrderTraversal(root_node: TreeNode):
+    if not root_node:
+        return
+    else:
+        custom_queue = hq.HelperQueue()
+        custom_queue.enqueue(root_node)
+
+levelOrderTraversal(new_tree)
