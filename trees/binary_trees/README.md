@@ -24,4 +24,5 @@ Traversing a binary tree:
 - In-order: Left Subtree -> Root Node -> Right Subtree
 - Post-order traversal: Left Subtree -> Right Subtree -> Root Node
 
-#### Breadth First Search (BFS): Level order traversal.
+#### Breadth First Search (BFS): 
+- Level order traversal: Nodes are visited level by level. When implementing level order traversal, we use Queue.
