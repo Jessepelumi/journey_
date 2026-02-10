@@ -38,7 +38,7 @@ def preorder_traversal(root_node: TreeNode):
     # time complexity - O(n)
     # space complexity -> O(n) -> recursion uses function call stack 
 
-# preorder_traversal(new_tree)
+preorder_traversal(new_tree)
 
 # In-order traversal
 def inorder_traversal(root_node: TreeNode):
@@ -52,7 +52,7 @@ def inorder_traversal(root_node: TreeNode):
     # time complexity -> O(n)
     # space complexity -> O(n) -> recursion uses function call stack
 
-# inorder_traversal(new_tree)
+inorder_traversal(new_tree)
 
 # Post-order traversal
 def postorder_traversal(root_node: TreeNode):

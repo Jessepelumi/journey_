@@ -17,3 +17,11 @@ Some binary tree operations are:
 - **Search:** Find a node with a specific value.
 - **Traversal:** Visit all nodes in a specific order (pre-order, in-order, post-order, or level-order).
 - **Deletion of Tree:** Completely remove all nodes from the tree.
+
+Traversing a binary tree:
+#### Depth First Search (DFS)
+- Preorder: Root Node -> Left Subtree -> Right Subtree
+- In-order: Left Subtree -> Root Node -> Right Subtree
+- Post-order traversal: Left Subtree -> Right Subtree -> Root Node
+
+#### Breadth First Search (BFS): Level order traversal.
