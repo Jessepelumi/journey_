@@ -79,4 +79,20 @@ def levelOrderTraversal(root_node: TreeNode):
         custom_queue = hq.HelperQueue()
         custom_queue.enqueue(root_node)
 
+        while not(custom_queue.isEmpty()):
+            # return root
+            root = custom_queue.dequeue()
+            print(root.val.val)
+
+            # check left child
+            if root.val.left_child:
+                custom_queue.enqueue(root.val.left_child)
+
+            # check right child
+            if root.val.right_child:
+                custom_queue.enqueue(root.val.right_child)
+
+    # time complexity -> O(n)
+    # space complexity -> O(n) -> because of the custom queue
+
 levelOrderTraversal(new_tree)
