@@ -95,4 +95,28 @@ def levelOrderTraversal(root_node: TreeNode):
     # time complexity -> O(n)
     # space complexity -> O(n) -> because of the custom queue
 
-levelOrderTraversal(new_tree)
+# levelOrderTraversal(new_tree)
+
+# search for a value
+def searchBt(root_node: TreeNode, node_val):
+    if not root_node:
+        return
+    else:
+        custom_queue = hq.HelperQueue()
+        custom_queue.enqueue(root_node)
+
+        while not(custom_queue.isEmpty()):
+            root = custom_queue.dequeue()
+            if root.val.val == node_val:
+                return "Success! -> " + root.val.val
+            
+            if root.val.left_child:
+                custom_queue.enqueue(root.val.left_child)
+            if root.val.right_child:
+                custom_queue.enqueue(root.val.right_child)
+
+        return node_val + " not found"
+    
+    # time & space complexity -> O(n)
+        
+print(searchBt(new_tree, "Col"))
