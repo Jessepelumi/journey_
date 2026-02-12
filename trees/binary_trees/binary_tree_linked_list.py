@@ -145,10 +145,11 @@ def insertNodeBT(root_node, new_node):
             
         # time & space complexity -> O(n)
 
-new_node = TreeNode("A cold drink in hot section")
+new_node = TreeNode("Fanta")
 # insertNodeBT(new_tree, new_node)
 # preorder_traversal(new_tree)
 
+# this inserts a new node to a specific or targeted node
 def insert_target_node(root_node: TreeNode, new_node: TreeNode, target_node):
     if not root_node:
         root_node = new_node
@@ -166,7 +167,7 @@ def insert_target_node(root_node: TreeNode, new_node: TreeNode, target_node):
                 elif not root.val.right_child:
                     root.val.right_child = new_node
                 else:
-                    "Node already balanced"
+                    return "Node already balanced"
                 return "Inserted successfully"
 
             # continue with traversal
@@ -177,8 +178,74 @@ def insert_target_node(root_node: TreeNode, new_node: TreeNode, target_node):
                 custom_queue.enqueue(root.val.right_child)
 
         return "Target node not found"
+    # time & space complexity -> O(n)
     
-print(insert_target_node(new_tree, new_node, pepsi))
-preorder_traversal(new_tree)
+# print(insert_target_node(new_tree, new_node, pepsi))
+# preorder_traversal(new_tree)
     
+# delete a node
+"""
+Ordinary Binary Tree Deletion (Summary):
+For an ordinary binary tree, the order of nodes does not matter, so deletion does not need to preserve parent-child identity. Instead, we focus on preserving the shape of the tree, particularly its level-order balance.
 
+To delete a node:
+- Find the deepest node in the tree.
+- Replace the value of the target node with the value of the deepest node.
+- Remove the deepest node from the tree.
+
+This ensures the tree remains compact and connected, while sacrificing the original parental links of the target node.
+"""
+# get deepest node (level order traversal)
+def getDeepestNode(root_node: TreeNode):
+    if not root_node:
+        return
+    
+    custom_queue = hq.HelperQueue()
+    custom_queue.enqueue(root_node)
+
+    while not custom_queue.isEmpty():
+        root = custom_queue.dequeue()
+        
+        if root.val.left_child:
+            custom_queue.enqueue(root.val.left_child)
+
+        if root.val.right_child:
+            custom_queue.enqueue(root.val.right_child)
+        
+    deepest_node = root.val
+    return deepest_node
+
+# delete deepest node
+def deleteDeepestNode(root_node: TreeNode, deepest_node: TreeNode):
+    if not root_node:
+        return
+    
+    custom_queue = hq.HelperQueue()
+    custom_queue.enqueue(root_node)
+
+    while not custom_queue.isEmpty():
+        root = custom_queue.dequeue()
+
+        if root.val == deepest_node:
+            root.val.left_child = None
+            root.val.right_child = None
+
+        # continue traversal
+        if root.val.left_child:
+            custom_queue.enqueue(root.val.left_child)
+        if root.val.right_child:
+            custom_queue.enqueue(root.val.right_child)
+
+# print(getDeepestNode(new_tree))
+
+def delete_node(new_node: TreeNode, target_node: TreeNode):
+    pass
+
+# print(insert_target_node(new_tree, new_node, cola))
+# levelOrderTraversal(new_tree)
+
+print(insert_target_node(new_tree, new_node, cola))
+levelOrderTraversal(new_tree)
+
+deleteDeepestNode(new_tree, getDeepestNode(new_tree))
+levelOrderTraversal(new_tree)
