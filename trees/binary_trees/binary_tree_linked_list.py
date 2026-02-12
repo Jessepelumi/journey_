@@ -119,4 +119,32 @@ def searchBt(root_node: TreeNode, node_val):
     
     # time & space complexity -> O(n)
         
-print(searchBt(new_tree, "Col"))
+# print(searchBt(new_tree, "Col"))
+
+# insert a new node
+# this function inserts the new node into the first available child node, not a specific or targetted node
+def insertNodeBT(root_node, new_node):
+    if not root_node:
+        root_node = new_node
+    else:
+        custom_queue = hq.HelperQueue()
+        custom_queue.enqueue(root_node)
+        while not(custom_queue.isEmpty()):
+            root = custom_queue.dequeue()
+            if root.val.left_child:
+                custom_queue.enqueue(root.val.left_child)
+            else:
+                root.val.left_child = new_node
+                return "Inserted successfully"
+
+            if root.val.right_child:
+                custom_queue.enqueue(root.val.right_child)
+            else:
+                root.val.right_child = new_node
+                return "Inserted successfully"
+            
+        # time & space complexity -> O(n)
+
+new_node = TreeNode("A cold drink in hot section")
+insertNodeBT(new_tree, new_node)
+preorder_traversal(new_tree)
