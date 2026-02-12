@@ -146,5 +146,39 @@ def insertNodeBT(root_node, new_node):
         # time & space complexity -> O(n)
 
 new_node = TreeNode("A cold drink in hot section")
-insertNodeBT(new_tree, new_node)
+# insertNodeBT(new_tree, new_node)
+# preorder_traversal(new_tree)
+
+def insert_target_node(root_node: TreeNode, new_node: TreeNode, target_node):
+    if not root_node:
+        root_node = new_node
+    else:
+        custom_queue = hq.HelperQueue()
+        custom_queue.enqueue(root_node)
+
+        while not custom_queue.isEmpty():
+            root = custom_queue.dequeue()
+
+            # check if target node was found
+            if root.val == target_node:
+                if not root.val.left_child:
+                    root.val.left_child = new_node
+                elif not root.val.right_child:
+                    root.val.right_child = new_node
+                else:
+                    "Node already balanced"
+                return "Inserted successfully"
+
+            # continue with traversal
+            if root.val.left_child:
+                custom_queue.enqueue(root.val.left_child)
+
+            if root.val.right_child:
+                custom_queue.enqueue(root.val.right_child)
+
+        return "Target node not found"
+    
+print(insert_target_node(new_tree, new_node, pepsi))
 preorder_traversal(new_tree)
+    
+
