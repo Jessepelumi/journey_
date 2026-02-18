@@ -278,10 +278,25 @@ def delete_node(root_node: TreeNode, target_node):
 
         # time & space complexity -> O(n)
 
+
+# delete entire tree
+def delete_tree(root_node: TreeNode):
+    if not root_node:
+        return
+    
+    root_node.val = None
+    root_node.left_child = None
+    root_node.right_child = None
+
+    return "Binary tree deleted"
+    # time & space complexity -> O(1)
+
 # print(insert_target_node(new_tree, new_node, cola))
 # levelOrderTraversal(new_tree)
 
 # node = getDeepestNode(new_tree)
 # deleteDeepestNode(new_tree, getDeepestNode(new_tree))
 delete_node(new_tree, "Cold")
+
+delete_tree(new_tree)
 levelOrderTraversal(new_tree)
