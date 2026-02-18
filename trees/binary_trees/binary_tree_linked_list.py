@@ -227,25 +227,57 @@ def deleteDeepestNode(root_node: TreeNode, deepest_node: TreeNode):
         root = custom_queue.dequeue()
 
         if root.val == deepest_node:
-            root.val.left_child = None
-            root.val.right_child = None
+            root.val = None
+            return
 
         # continue traversal
         if root.val.left_child:
+            if root.val.left_child == deepest_node:
+                root.val.left_child = None
+                return
+            
             custom_queue.enqueue(root.val.left_child)
+
         if root.val.right_child:
+            if root.val.right_child == deepest_node:
+                root.val.right_child = None
+                return
+            
             custom_queue.enqueue(root.val.right_child)
 
 # print(getDeepestNode(new_tree))
 
-def delete_node(new_node: TreeNode, target_node: TreeNode):
-    pass
+def delete_node(root_node: TreeNode, target_node):
+    if not root_node:
+        return
+    
+    custom_queue = hq.HelperQueue()
+    custom_queue.enqueue(root_node)
+
+    while not custom_queue.isEmpty():
+        root = custom_queue.dequeue()
+
+        # update the value of the target node to that of the deepest node
+        if root.val.val == target_node:
+            node = getDeepestNode(root_node)
+            root.val.val = node.val
+
+            # delete deepest node
+            deleteDeepestNode(root_node, node)
+
+            return "Node has been deleted"
+
+
+        if root.val.left_child:
+            custom_queue.enqueue(root.val.left_child)
+
+        if root.val.right_child:
+            custom_queue.enqueue(root.val.right_child)
 
 # print(insert_target_node(new_tree, new_node, cola))
 # levelOrderTraversal(new_tree)
 
-print(insert_target_node(new_tree, new_node, cola))
-levelOrderTraversal(new_tree)
-
-deleteDeepestNode(new_tree, getDeepestNode(new_tree))
+# node = getDeepestNode(new_tree)
+# deleteDeepestNode(new_tree, getDeepestNode(new_tree))
+delete_node(new_tree, "Cold")
 levelOrderTraversal(new_tree)
