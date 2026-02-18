@@ -5,6 +5,8 @@
 #         self.left = left
 #         self.right = right
 
+from collections import deque
+
 # BST node
 class BSTNode:
     def __init__(self, val):
@@ -25,4 +27,52 @@ def insert_node(root: BSTNode, val):
     
     return root
     # time and space complexity -> O(log n) (halfed input)
+
+# traversing a BST
+# DFS traversal
+def preorder(root: BSTNode):
+    if root is None:
+        return
+    
+    print(root.val)
+    preorder(root.left)
+    preorder(root.right)
+    # time & space complexity -> O(n)
+
+def inorder(root: BSTNode):
+    if root is None:
+        return
+    
+    inorder(root.left)
+    print(root.val)
+    inorder(root.right)
+    # time & space complexity -> O(n)
+
+def postorder(root: BSTNode):
+    if root is None:
+        return
+    
+    postorder(root.left)
+    postorder(root.right)
+    print(root.val)
+    # time & space complexity -> O(n)
+
+# BFS traversal
+def levelorder(root: BSTNode):
+    if root is None:
+        return
+    
+    # custom queue
+    queue = deque([root])
+    
+    while queue:
+        node = queue.popleft()
+        print(node.val)
+
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+    
+    # time & space complixity -> O(n)
 
