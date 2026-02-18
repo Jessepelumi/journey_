@@ -214,6 +214,7 @@ def getDeepestNode(root_node: TreeNode):
         
     deepest_node = root.val
     return deepest_node
+    # time & space complexity -> O(n)
 
 # delete deepest node
 def deleteDeepestNode(root_node: TreeNode, deepest_node: TreeNode):
@@ -244,6 +245,7 @@ def deleteDeepestNode(root_node: TreeNode, deepest_node: TreeNode):
                 return
             
             custom_queue.enqueue(root.val.right_child)
+        # time & space complexity -> O(n)
 
 # print(getDeepestNode(new_tree))
 
@@ -273,6 +275,8 @@ def delete_node(root_node: TreeNode, target_node):
 
         if root.val.right_child:
             custom_queue.enqueue(root.val.right_child)
+
+        # time & space complexity -> O(n)
 
 # print(insert_target_node(new_tree, new_node, cola))
 # levelOrderTraversal(new_tree)
