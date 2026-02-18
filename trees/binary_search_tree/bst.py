@@ -90,4 +90,5 @@ def search(root: BSTNode, target: BSTNode):
             current = target.right # ignore left and traverse through right subtree
 
     return None # when not found
+    # time & space complexity -> O(log n)
 
