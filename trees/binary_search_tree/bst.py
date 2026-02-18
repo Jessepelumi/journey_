@@ -76,3 +76,18 @@ def levelorder(root: BSTNode):
     
     # time & space complixity -> O(n)
 
+# search for a node 
+def search(root: BSTNode, target: BSTNode):
+    current = root
+
+    while current:
+        if target.val == current.val:
+            return current
+        
+        if target.val < current.val:
+            current = target.left # ignore right and traverse through left subtree
+        else:
+            current = target.right # ignore left and traverse through right subtree
+
+    return None # when not found
+
