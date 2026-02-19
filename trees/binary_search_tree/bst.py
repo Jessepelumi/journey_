@@ -93,15 +93,41 @@ def search(root: BSTNode, target: BSTNode):
     # time & space complexity -> O(log n)
 
 # delete a node
+# Note: check README for detailed explanation.
 
-"""
-There are three cases to consider when deleting a node:
+# find min value
+# to find min val, traverse through the left part of the tree 
+def find_min(root: BSTNode):
+    current = root
 
-- The node to be deleted is a leaf node
-- The node has one child
-- The node has two children
-"""
+    while current.left:
+        current = current.left
+    return root
 
-def delete():
-    pass
+def delete(root: BSTNode, key):
+    if not root:
+        return None
+    
+    if key < root.val:
+        root.left = delete(root.left, key)
+    elif key > root.val:
+        root.right = delete(root.right, key)
+    else:
+        # leaf node
+        if not root.left and not root.right:
+            return None
+        
+        # node has one child
+        elif not root.left:
+            return root.right
+        elif not root.right:
+            return root.left
+        
+        # node has two children
+        else:
+            temp = find_min(root)
+            root.val = temp.val
+            root.right = delete(root.right, temp.val)
+
+    return root
 
