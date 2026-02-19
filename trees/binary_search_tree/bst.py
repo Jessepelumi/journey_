@@ -132,3 +132,16 @@ def delete(root: BSTNode, key):
     return root
     # time & space complexity -> O(n)
 
+# delete entire tree
+def deleteAll(root: BSTNode):
+    if root:
+        # recursively delete left and right subtrees
+        deleteAll(root.left)
+        deleteAll(root.right)
+
+        # disconnect the node from its children
+        root.left = None
+        root.right = None
+
+    return None
+
