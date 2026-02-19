@@ -2,7 +2,7 @@
 
 A Binary Search Tree (BST) is a binary tree with additional properties such as:
 
-For ant given node N:
+For any given node N:
 
 - **Left Subtree:** Every node in the left subtree must have a value less than (or equal) to the value of node N.
 - **Right Subtree:** Every node in the right subtree must have a value greater than (or equal to) the value of node N.
