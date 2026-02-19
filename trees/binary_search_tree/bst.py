@@ -92,3 +92,16 @@ def search(root: BSTNode, target: BSTNode):
     return None # when not found
     # time & space complexity -> O(log n)
 
+# delete a node
+
+"""
+There are three cases to consider when deleting a node:
+
+- The node to be deleted is a leaf node
+- The node has one child
+- The node has two children
+"""
+
+def delete():
+    pass
+
