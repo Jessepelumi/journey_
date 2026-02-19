@@ -130,4 +130,5 @@ def delete(root: BSTNode, key):
             root.right = delete(root.right, temp.val)
 
     return root
+    # time & space complexity -> O(n)
 
