@@ -33,7 +33,15 @@ def getBalance(node: AVLNode):
 def rightRotation(n: AVLNode):
     pass
 
-# perform a left notation
+# Perform a left notation
+
+# 1. Create a variable 'a' and assign it to the right child of the node to be rotated
+# 2. Create another variable 'b' and assign it to the left child of the right child of the node to be rotated
+# 3. Set the rotated node as the left child of a.
+# 4. Set b as the right child of the rotated node
+# 5. Adjust heights
+# 6. Return a
+
 def leftRotation():
     pass
 
