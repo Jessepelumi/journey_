@@ -42,7 +42,7 @@ def rightRotation(n: AVLNode):
 # 5. Adjust heights
 # 6. Return a
 
-def leftRotation():
+def leftRotation(n: AVLNode):
     pass
 
 # Insert a node to an AVL Tree
