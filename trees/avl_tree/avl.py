@@ -30,7 +30,7 @@ def getBalance(node: AVLNode):
 # 5. Adjust heights
 # 6. Return a.
 
-def rightRotation(n: AVLNode):
+def rightRotation():
     pass
 
 # Perform a left notation
