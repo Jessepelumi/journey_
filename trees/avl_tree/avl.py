@@ -30,8 +30,17 @@ def getBalance(node: AVLNode):
 # 5. Adjust heights
 # 6. Return a.
 
-def rightRotation():
-    pass
+def rightRotation(n: AVLNode):
+    a = n.left
+    b = a.right
+
+    a.right = n
+    n.left = b
+
+    n.height = 1 + max(getHeight(n.left), getHeight(n.right))
+    a.height = 1 + max(getHeight(a.left), getHeight(a.right))
+
+    return a
 
 # Perform a left notation
 
@@ -42,8 +51,17 @@ def rightRotation():
 # 5. Adjust heights
 # 6. Return a
 
-def leftRotation():
-    pass
+def leftRotation(n: AVLNode):
+    a = n.right
+    b = a.left
+
+    a.left = n
+    n.right = b
+
+    n.height = 1 + max(getHeight(n.left), getHeight(n.right))
+    a.height = 1 + max(getHeight(a.left), getHeight(a.right))
+
+    return a
 
 # Insert a node to an AVL Tree
 
