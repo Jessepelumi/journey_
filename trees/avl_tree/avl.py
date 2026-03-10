@@ -75,3 +75,37 @@ def leftRotation(n: AVLNode):
 # balance factor > 1: left heavy
 # balance factor < -1: right heavy
 
+def insertNode(root: AVLNode, val):
+    # Empty tree
+    if not root:
+        return AVLNode(val)
+    
+    if val < root.val:
+        root.left = insertNode(root.left, val)
+    else:
+        root.right = insertNode(root.right, val)
+
+    root.height = 1 + max(getHeight(root.left), getHeight(root.right))
+    balance = getBalance(root)
+
+    # Perform rotations based on balance factor
+    # Left-Left condition
+    if balance > 1 and val < root.left.val:
+        return rightRotation(root)
+    
+    # Right-Right condition
+    if balance < -1 and val > root.right.val:
+        return leftRotation(root)
+    
+    # Left-Right condition
+    if balance > 1 and val > root.left.val:
+        root.left = leftRotation(root.left)
+        return rightRotation(root)
+    
+    # Right-Left condition
+    if balance < -1 and val < root.right.val:
+        root.right = rightRotation(root.right)
+        return leftRotation(root)
+
+    return root
+
