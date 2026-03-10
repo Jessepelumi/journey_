@@ -115,3 +115,56 @@ def insertNode(root: AVLNode, val):
 
     # time & space complexity -> O(log n)
 
+# find minimum value
+def getMin(root: AVLNode):
+    current = root
+
+    while current.left:
+        current = current.left
+    return root 
+
+def deleteNode(root: AVLNode, key):
+    if not root:
+        return None
+    
+    if key < root.val:
+        root.left = deleteNode(root.left, key)
+    elif key > root.val:
+        root.right = deleteNode(root.right, key)
+    else:
+        if not root.left:
+            return root.right
+        elif not root.right:
+            return root.left
+        
+        temp = getMin(root)
+        root.val = temp.val
+        root.right = deleteNode(root.right, temp.val)
+
+    # update height of current node
+    root.height = 1 + max(getHeight(root.left), getHeight(root.right))
+
+    # balance factor
+    balance = getBalance(root)
+
+    # left-left condition -> right rotation
+    if balance > 1 and getBalance(root.left) >= 0:
+        return rightRotation(root)
+
+    # right-right condition
+    if balance < -1 and getBalance(root.right) <= 0:
+        return leftRotation(root)
+
+    # left-right condition
+    if balance > 1 and getBalance(root.left) <= 0:
+        root.left = leftRotation(root.left)
+        return rightRotation(root)
+    
+    # right-left condition
+    if balance < -1 and getBalance(root.right) >= 0:
+        root.right = rightRotation(root.right)
+        return leftRotation(root)
+    
+    return root
+
+
