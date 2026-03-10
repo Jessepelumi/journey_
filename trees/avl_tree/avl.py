@@ -14,12 +14,14 @@ def getHeight(node: AVLNode):
     if not node:
         return 0
     return node.height
+    # time & space complexity -> O(1)
 
 # Get the balance factor
 def getBalance(node: AVLNode):
     if not node:
         return 0
     return getHeight(node.left) - getHeight(node.right)
+    # time & space complexity -> O(1)
 
 # Perform a right rotation
 
@@ -42,6 +44,7 @@ def rightRotation(n: AVLNode):
     new_node.height = 1 + max(getHeight(new_node.left), getHeight(new_node.right))
 
     return new_node
+    # time & space complexity -> O(1)
 
 # Perform a left notation
 
@@ -64,6 +67,7 @@ def leftRotation(n: AVLNode):
     new_node.height = 1 + max(getHeight(new_node.left), getHeight(new_node.right))
 
     return new_node
+    # time & complexity -> O(1)
 
 # Insert a node to an AVL Tree
 
@@ -81,9 +85,9 @@ def insertNode(root: AVLNode, val):
         return AVLNode(val)
     
     if val < root.val:
-        root.left = insertNode(root.left, val)
+        root.left = insertNode(root.left, val) # O(log n)
     else:
-        root.right = insertNode(root.right, val)
+        root.right = insertNode(root.right, val) # O(log n)
 
     root.height = 1 + max(getHeight(root.left), getHeight(root.right))
     balance = getBalance(root)
@@ -108,4 +112,6 @@ def insertNode(root: AVLNode, val):
         return leftRotation(root)
 
     return root
+
+    # time & space complexity -> O(log n)
 
