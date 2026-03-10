@@ -23,45 +23,47 @@ def getBalance(node: AVLNode):
 
 # Perform a right rotation
 
-# 1. Create a variable 'a' and assign it to the left child of the node to be rotated
-# 2. Create another variable 'b' and assign it to the right child of the left child of the node to be rotated.
-# 3. Set the rotated node as the right child of a.
-# 4. Set b as the left child of the rotated node.
+# 1. Create a variable 'new_root' and assign it to the left child of the disbalanced node
+# 2. Create another variable 'temp' and assign it to the right child of the left child of the disbalanced node.
+# 3. Set the disbalanced node as the right child of the new node.
+# 4. Set temp as the left child of the disbalanced node.
 # 5. Adjust heights of rotated node and new root
 # 6. Return a.
 
 def rightRotation(n: AVLNode):
-    a = n.left
-    b = a.right
+    new_node = n.left
+    temp = new_node.right
 
-    a.right = n
-    n.left = b
+    new_node.right = n
+    n.left = temp
 
+    # compute heights
     n.height = 1 + max(getHeight(n.left), getHeight(n.right))
-    a.height = 1 + max(getHeight(a.left), getHeight(a.right))
+    new_node.height = 1 + max(getHeight(new_node.left), getHeight(new_node.right))
 
-    return a
+    return new_node
 
 # Perform a left notation
 
-# 1. Create a variable 'a' and assign it to the right child of the node to be rotated
-# 2. Create another variable 'b' and assign it to the left child of the right child of the node to be rotated
-# 3. Set the rotated node as the left child of a.
-# 4. Set b as the right child of the rotated node
-# 5. Adjust heights of rotated node and new root
+# 1. Create a variable 'new_root' and assign it to the right child of the disbalanced node
+# 2. Create another variable 'temp' and assign it to the left child of the right child of the disbalanced node
+# 3. Set the disbalanced node as the left child of the new node.
+# 4. Set temp as the right child of the disbalanced node
+# 5. Adjust heights of disbalanced  node and new root
 # 6. Return a
 
 def leftRotation(n: AVLNode):
-    a = n.right
-    b = a.left
+    new_node = n.right
+    temp = new_node.left
 
-    a.left = n
-    n.right = b
+    new_node.left = n
+    n.right = temp
 
+    # compute height
     n.height = 1 + max(getHeight(n.left), getHeight(n.right))
-    a.height = 1 + max(getHeight(a.left), getHeight(a.right))
+    new_node.height = 1 + max(getHeight(new_node.left), getHeight(new_node.right))
 
-    return a
+    return new_node
 
 # Insert a node to an AVL Tree
 
