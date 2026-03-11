@@ -29,4 +29,10 @@ Common applications include:
     3. Dijkstra's algorithm
     4. A* pathfinding
     5. Event simulations.
+
+### Array implementation of Binary Heap
+When implementing a binary heap using a 0-based index array, the given formula is used:
+Left child: 2 * i + 1
+Right child: 2 * i + 2
+Parent: (i - 1) // 2
     
