@@ -32,7 +32,7 @@ class Heap:
 
             # move up to the next level
             index = parent_index
-            parent_index = (index - 1)//2
+            parent_index = (index - 1) // 2
 
         # time complexity -> O(log n)
         # space complexity -> O(1)
