@@ -13,4 +13,15 @@ class Heap:
         if self.heap_size <= 0:
             return "Heap is empty"
         return self.heap_list[0]
+    
+    def heapify_up(self, index):
+        parent_index = (index - 1) // 2
+
+        if index <= 0:
+            return
+        
+        if self.heap_list[index] < self.heap_list[parent_index]:
+            # swap positions
+            self.heap_list[index], self.heap_list[parent_index] = self.heap_list[parent_index], self.heap_list[index]
+            self.heapify_up(parent_index)
 
