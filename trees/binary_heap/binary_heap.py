@@ -13,6 +13,7 @@ class Heap:
         if self.heap_size <= 0:
             return "Heap is empty"
         return self.heap_list[0]
+        # time & space complexity -> O(1)
     
     def heapify_up(self, index):
         parent_index = (index - 1) // 2
@@ -20,10 +21,21 @@ class Heap:
         if index <= 0:
             return
         
-        if self.heap_list[index] < self.heap_list[parent_index]:
-            # swap positions
+        # if self.heap_list[index] < self.heap_list[parent_index]:
+        #     # swap positions
+        #     self.heap_list[index], self.heap_list[parent_index] = self.heap_list[parent_index], self.heap_list[index]
+        #     self.heapify_up(parent_index)
+
+        # iterative method
+        while index > 0 and self.heap_list[index] < self.heap_list[parent_index]:
             self.heap_list[index], self.heap_list[parent_index] = self.heap_list[parent_index], self.heap_list[index]
-            self.heapify_up(parent_index)
+
+            # move up to the next level
+            index = parent_index
+            parent_index = (index - 1)//2
+
+        # time complexity -> O(log n)
+        # space complexity -> O(1)
 
     def insert(self, val):
         # check if heap is full
