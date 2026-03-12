@@ -25,3 +25,12 @@ class Heap:
             self.heap_list[index], self.heap_list[parent_index] = self.heap_list[parent_index], self.heap_list[index]
             self.heapify_up(parent_index)
 
+    def insert(self, val):
+        # check if heap is full
+        if self.heap_size + 1 > self.max_size:
+            return "Heap is full"
+        
+        self.heap_list[self.heap_size] = val
+        self.heap_size += 1
+        self.heapify_up(self.heap_size - 1)
+
