@@ -46,3 +46,6 @@ class Heap:
         self.heap_size += 1
         self.heapify_up(self.heap_size - 1)
 
+    def heapify_down():
+        pass
+
