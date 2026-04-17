@@ -1,16 +1,28 @@
 # Linked List
 
-A **Linked List** is a linear data structure made up of **nodes** connected in a chain. Each node contains:
+A **Linked List** is a linear data structure made up of **nodes** connected in a chain. Each node contains data and a reference (pointer) to the next node. Unlike arrays, elements are not stored in contiguous memory locations.
 
-- **Data**: the value stored
-- **Pointer/Reference**: a reference to the next node
+## Why Linked Lists?
 
-Linked lists excel at dynamic memory allocation and efficient insertion/deletion (O(1) when position is known).
+- Dynamic size: no need to declare fixed size
+- Efficient insertion/deletion: O(1) when position is known
+- No memory waste: no pre-allocation needed
+- Flexible memory allocation
 
 ## Key Terminology
 
 - **Head**: the first node in the list
 - **Tail**: the last node, which points to null (or back to head for circular)
+- **Node**: a container holding data and a reference
+- **Pointer/Reference**: the link to the next (or previous) node
+- **Null**: indicates end of list (or None in Python)
+
+## Real-world Examples
+
+- Music playlist (next/previous buttons)
+- Browser history (back/forward navigation)
+- Image viewer (next/previous image)
+- Task scheduling linked list in OS
 
 ## Types
 
@@ -31,7 +43,7 @@ Nodes point both forward and backward. Each node has:
 
 ### Circular Linked List
 
-The last node points back to the first, forming a circle.
+The last node points back to the first, forming a circle. Can be singly or doubly.
 
 ## Common Operations
 
@@ -41,9 +53,26 @@ The last node points back to the first, forming a circle.
 - `delete` — remove node by value
 - `search` — find if a value exists
 - `print` — display all elements
+- `reverse` — reverse the list order
+- `get_length` — count number of nodes
 
 ## Time Complexity
 
-- Search: **O(n)**
-- Insert/Delete at head: **O(1)**
-- Insert/Delete at tail: **O(1)** (with tail pointer)
+| Operation | Singly | Doubly |
+|-----------|--------|--------|
+| Search | O(n) | O(n) |
+| Insert at Head | O(1) | O(1) |
+| Insert at Tail | O(1)* | O(1)* |
+| Delete at Head | O(1) | O(1) |
+| Delete at Tail | O(n) | O(1) |
+
+*With tail pointer
+
+## Advantages vs Arrays
+
+| Aspect | Linked List | Array |
+|--------|-------------|-------|
+| Insertion/Deletion | O(1) | O(n) |
+| Random Access | O(n) | O(1) |
+| Memory | Dynamic | Fixed |
+| Cache Friendly | No | Yes |

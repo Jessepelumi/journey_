@@ -1,10 +1,31 @@
 # Binary Heap
 
-A **Binary Heap** is a complete binary tree that satisfies the heap property. It is primarily used to implement **priority queues**.
+A **Binary Heap** is a complete binary tree that satisfies the heap property. It is primarily used to implement **priority queues** and is the foundation for heap sort.
 
 ## Why Complete Tree?
 
-The complete tree structure ensures the heap can be stored efficiently in an array without wasted space, and enables **O(log n)** insert and delete operations by maintaining a balanced shape.
+The complete tree structure ensures:
+- Efficient array storage (no wasted space)
+- **O(log n)** insert and delete operations
+- Balanced shape for consistent performance
+- Cache-friendly memory access
+
+## Key Terminology
+
+- **Complete Tree**: All levels filled except possibly the last, filled left to right
+- **Heap Property**: Parent is either greater than or less than children
+- **Min Heap**: Smallest element at root (parent ≤ children)
+- **Max Heap**: Largest element at root (parent ≥ children)
+- **Bubble Up**: Process of restoring heap property after insertion
+- **Bubble Down**: Process of restoring heap property after removal (heapify)
+
+## Real-world Examples
+
+- Priority queue implementations
+- CPU task scheduling
+- Dijkstra's algorithm (with min-heap)
+- Finding top-k elements
+- Median of data streams
 
 ## Properties
 
@@ -24,11 +45,31 @@ For a node at index `i`:
 - Right child: `2 * i + 2`
 - Parent: `(i - 1) // 2`
 
+## Array Index Formulas (1-based)
+
+For a node at index `i`:
+
+- Left child: `2 * i`
+- Right child: `2 * i + 1`
+- Parent: `i // 2`
+
 ## Key Operations
 
-- **Insert**: Add to end, then "bubble up" to maintain heap property — **O(log n)**
-- **Extract Min/Max**: Remove root, replace with last element, then "bubble down" — **O(log n)**
-- **Peek**: View root element — **O(1)**
+| Operation | Description | Time Complexity |
+|-----------|-------------|-----------------|
+| **Insert** | Add to end, then bubble up | O(log n) |
+| **Extract Min/Max** | Remove root, replace with last, bubble down | O(log n) |
+| **Peek** | View root element | O(1) |
+| **Build Heap** | Create heap from array | O(n) |
+
+## Time Complexity
+
+| Operation | Time Complexity |
+|-----------|-----------------|
+| Insert | O(log n) |
+| Extract Min/Max | O(log n) |
+| Peek | O(1) |
+| Build Heap | O(n) |
 
 ## Applications
 
@@ -37,3 +78,5 @@ For a node at index `i`:
 - Dijkstra's algorithm (with min-heap)
 - Heap sort
 - Finding kth smallest/largest elements
+- Median maintenance
+- Top-k streaming elements
