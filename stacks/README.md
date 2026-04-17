@@ -1,15 +1,30 @@
-## Stack
+# Stack
 
-A **Stack** is a linear data structure that follows the Last In First Out (LIFO) manner. That is, the last element in the stack is the first to be removed, and the first will be the last to be removed. 
+A **Stack** is a linear data structure that follows **LIFO** (Last In First Out) — the last element added is the first to be removed.
 
-The stack data structure can be built using arrays/lists or linked lists.
+## Key Terminology
 
-A good real life implementation of stacks is web pages in web browsers (the back button). The last inserted page is the first to be popped.
+- **Top**: the most recently added element (where operations happen)
 
-### Common Stack Operations
-- **Push**: add a new element to the stack.
-- **Pop**: remove the last inserted element in the stack.
-- **Peek**: returning the last inserted element in the stack without removing it.
-- **Is Empty**: to check if the stack is empty.
-- **Size**: to return the number of elements in the stack.
-- **Delete All**: to clear the stack or delete all the element in the stack.
+## Real-world Examples
+
+- Browser history: the back button returns to the most recently visited page
+- Undo/redo functionality in editors
+- Function call stack in programming languages
+
+## Implementations
+
+- **Python Lists**: array-based stack
+- **Linked Lists**: pointer-based stack
+
+## Common Operations
+
+- `push` — add an element to the top
+- `pop` — remove the top element
+- `peek` — view the top element without removing it
+- `is_empty` — check if the stack is empty
+- `size` — return the number of elements
+
+## Time Complexity
+
+- All operations: **O(1)**
