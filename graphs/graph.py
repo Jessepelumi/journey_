@@ -1,5 +1,7 @@
 # Graph implementation using adjacency list
 
+from collections import deque
+
 class Graph:
     def __init__(self, dict=None):
         if dict is None:
@@ -49,6 +51,27 @@ class Graph:
 
         return True
     
+    # Graph traversal
+    def bfs(self, v):
+        visited = set()
+        queue = deque([v])
+        result = []
+
+        visited.add(v)
+
+        while queue:
+            current = queue.popleft()
+            result.append(current)
+
+            for n in self.dict[current]:
+                if n not in visited:
+                    visited.add(n)
+                    queue.append(n)
+
+        return result
+    
+
+# Usage
 graph = Graph()
 graph.add_vertex("A")
 graph.add_vertex("B")
