@@ -74,6 +74,30 @@ class Graph:
         return result
         # Time complexity: O(V+E) -> V (no. of vertices), E (no. of edges)
         # Space O(V)
+
+    def dfs(self, v):
+        if v not in self.dict:
+            return []
+        
+        visited = set()
+        stack = [v]
+        result = []
+
+        visited.add(v)
+
+        while stack:
+            current = stack.pop()
+
+            if current not in visited:
+                visited.add(current)
+                result.append(current)
+
+                for n in self.dict[current]:
+                    stack.append(n)
+
+        return result
+        # Time complexity: O(V+E) -> V (no. of vertices), E (no. of edges)
+        # Space O(V)
     
 
 # Usage
