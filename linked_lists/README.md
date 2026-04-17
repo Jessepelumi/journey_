@@ -1,41 +1,49 @@
-## Linked List
+# Linked List
 
-A **Linked List** is a linear data structure made up of nodes that are connected together in a chain-like structure, where each node contains two components: data and a refeo to the next node in the sequence. 
+A **Linked List** is a linear data structure made up of **nodes** connected in a chain. Each node contains:
 
-Linked lists a great for **dynamic memory allocation** and efficient insertion and deletion of nodes.
+- **Data**: the value stored
+- **Pointer/Reference**: a reference to the next node
 
-Generally, linked lists consist of two parts: head and tail.
-The **head** refers to the first node on the list.
-The **tail** refers to the last node, which points to 'null', signifying the end of the list.
+Linked lists excel at dynamic memory allocation and efficient insertion/deletion (O(1) when position is known).
 
-Types of linked lists - Singly, Doubly, and Circular.
+## Key Terminology
 
+- **Head**: the first node in the list
+- **Tail**: the last node, which points to null (or back to head for circular)
 
-### Singly Linked Lists
+## Types
 
-A **Singly Linked List** consist of nodes with the following components:
-- **Data**: The value stored in the node.
-- **Next**: A reference to the next node in the list.
+### Singly Linked List
 
-The operations that can be performed on a singly linked list are:
-- **Append**: add a new node to the end of the list.
-- **Prepend**: add a new node to the beginning of the list.
-- **Insert**: add a new node after a node with a given value.
-- **Delete**: remove a node with a specific value from the list.
-- **Search**: check if a value exist in the list.
-- **Print**: print all the elements in the list.
+Nodes point forward only. Each node has:
 
-### Doubly Linked Lists
+- **Data**: the value stored
+- **Next**: reference to the next node
 
-A **Doubly Linked List** consist of nodes with the following components:
-- **Data**: The value stored in the node.
-- **Next**: A reference to the next node in the list.
-- **Prev**: A reference to the previous node in the list.
+### Doubly Linked List
 
-The operations that can be performed on a singly linked list are:
-- **Append**: add a new node to the end of the list.
-- **Prepend**: add a new node to the beginning of the list.
-- **Insert**: add a new node after a node with a given value.
-- **Delete**: remove a node with a specific value from the list.
-- **Search**: check if a value exist in the list.
-- **Print**: print all the elements in the list.
+Nodes point both forward and backward. Each node has:
+
+- **Data**: the value stored
+- **Next**: reference to the next node
+- **Prev**: reference to the previous node
+
+### Circular Linked List
+
+The last node points back to the first, forming a circle.
+
+## Common Operations
+
+- `append` — add node to the end
+- `prepend` — add node to the beginning
+- `insert` — add node after a given value
+- `delete` — remove node by value
+- `search` — find if a value exists
+- `print` — display all elements
+
+## Time Complexity
+
+- Search: **O(n)**
+- Insert/Delete at head: **O(1)**
+- Insert/Delete at tail: **O(1)** (with tail pointer)
