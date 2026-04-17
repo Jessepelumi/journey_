@@ -35,46 +35,46 @@ A **Binary Tree** is a hierarchical structure where each node has at most two ch
 
 ## Specialized Types
 
-| Type | Description |
-|------|-------------|
-| **BST** | Left child < parent < right child (ordered) |
-| **Heap** | Satisfies heap property (min or max at root) |
-| **AVL Tree** | Self-balancing BST with height constraint |
-| **Red-Black Tree** | Self-balancing BST with color properties |
-| **Syntax Tree** | Represents program/expression syntax (compilers) |
-| **Expression Tree** | Represents mathematical expressions |
-| **Trie** | Prefix tree for string operations |
+| Type                | Description                                      |
+| ------------------- | ------------------------------------------------ |
+| **BST**             | Left child < parent < right child (ordered)      |
+| **Heap**            | Satisfies heap property (min or max at root)     |
+| **AVL Tree**        | Self-balancing BST with height constraint        |
+| **Red-Black Tree**  | Self-balancing BST with color properties         |
+| **Syntax Tree**     | Represents program/expression syntax (compilers) |
+| **Expression Tree** | Represents mathematical expressions              |
+| **Trie**            | Prefix tree for string operations                |
 
 ## Common Operations
 
-| Operation | Description |
-|-----------|-------------|
-| **Create** | Initialize an empty tree |
-| **Insert** | Add a node at appropriate location |
-| **Delete** | Remove a node and handle children |
-| **Search** | Find a node with specific value |
-| **Traversal** | Visit all nodes in specific order |
-| **Get Height** | Calculate tree height |
-| **Get Size** | Count total nodes |
-| **Delete Tree** | Remove all nodes |
+| Operation       | Description                        |
+| --------------- | ---------------------------------- |
+| **Create**      | Initialize an empty tree           |
+| **Insert**      | Add a node at appropriate location |
+| **Delete**      | Remove a node and handle children  |
+| **Search**      | Find a node with specific value    |
+| **Traversal**   | Visit all nodes in specific order  |
+| **Get Height**  | Calculate tree height              |
+| **Get Size**    | Count total nodes                  |
+| **Delete Tree** | Remove all nodes                   |
 
 ## Time Complexity
 
 | Operation | Worst Case | Balanced Case |
-|-----------|------------|---------------|
-| Search | O(n) | O(log n) |
-| Insert | O(n) | O(log n) |
-| Delete | O(n) | O(log n) |
-| Traversal | O(n) | O(n) |
+| --------- | ---------- | ------------- |
+| Search    | O(n)       | O(log n)      |
+| Insert    | O(n)       | O(log n)      |
+| Delete    | O(n)       | O(log n)      |
+| Traversal | O(n)       | O(n)          |
 
 ## Traversals
 
 ### Depth First Search (DFS)
 
-| Type | Order | Use Case |
-|------|-------|----------|
-| **Preorder** | Root → Left → Right | Copying trees, prefix expressions |
-| **Inorder** | Left → Root → Right | BST sorted output |
+| Type          | Order               | Use Case                            |
+| ------------- | ------------------- | ----------------------------------- |
+| **Preorder**  | Root → Left → Right | Copying trees, prefix expressions   |
+| **Inorder**   | Left → Root → Right | BST sorted output                   |
 | **Postorder** | Left → Right → Root | Deleting trees, postfix expressions |
 
 ### Breadth First Search (BFS)
@@ -84,9 +84,9 @@ A **Binary Tree** is a hierarchical structure where each node has at most two ch
 
 ## Special Binary Trees
 
-| Type | Definition |
-|------|------------|
-| **Full Tree** | Every node has 0 or 2 children |
-| **Complete Tree** | All levels filled except possibly last |
-| **Perfect Tree** | All internal nodes have 2 children, all leaves same level |
-| **Degenerate Tree** | Each node has only 1 child (like linked list) |
+| Type                | Definition                                                |
+| ------------------- | --------------------------------------------------------- |
+| **Full Tree**       | Every node has 0 or 2 children                            |
+| **Complete Tree**   | All levels filled except possibly last                    |
+| **Perfect Tree**    | All internal nodes have 2 children, all leaves same level |
+| **Degenerate Tree** | Each node has only 1 child (like linked list)             |

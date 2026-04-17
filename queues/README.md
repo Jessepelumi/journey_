@@ -20,12 +20,12 @@ A **Queue** is a linear data structure that follows the **FIFO** (First In First
 
 ## Implementations
 
-| Implementation | Description |
-|----------------|-------------|
-| **Python Lists** | Queue without capacity (unbounded) |
-| **Circular Queue** | Queue with fixed capacity (wraps around) |
-| **Linked Lists** | Dynamic queue implementation |
-| **Deque** | Double-ended queue (add/remove from both ends) |
+| Implementation     | Description                                    |
+| ------------------ | ---------------------------------------------- |
+| **Python Lists**   | Queue without capacity (unbounded)             |
+| **Circular Queue** | Queue with fixed capacity (wraps around)       |
+| **Linked Lists**   | Dynamic queue implementation                   |
+| **Deque**          | Double-ended queue (add/remove from both ends) |
 
 ## Common Operations
 
@@ -39,18 +39,18 @@ A **Queue** is a linear data structure that follows the **FIFO** (First In First
 ## Time Complexity
 
 | Operation | Time Complexity |
-|-----------|-----------------|
-| Enqueue | **O(1)** |
-| Dequeue | **O(1)** |
-| Peek | **O(1)** |
-| is_empty | **O(1)** |
+| --------- | --------------- |
+| Enqueue   | **O(1)**        |
+| Dequeue   | **O(1)**        |
+| Peek      | **O(1)**        |
+| is_empty  | **O(1)**        |
 
 ## Types of Queues
 
-| Type | Description |
-|------|-------------|
-| **Simple Queue** | Basic FIFO order |
-| **Circular Queue** | Last position connects to first (wraps around) |
-| **Priority Queue** | Elements removed based on priority (not FIFO) |
-| **Deque** | Double-ended, can add/remove from both ends |
+| Type               | Description                                       |
+| ------------------ | ------------------------------------------------- |
+| **Simple Queue**   | Basic FIFO order                                  |
+| **Circular Queue** | Last position connects to first (wraps around)    |
+| **Priority Queue** | Elements removed based on priority (not FIFO)     |
+| **Deque**          | Double-ended, can add/remove from both ends       |
 | **Blocking Queue** | Operations block when empty/full (multithreading) |

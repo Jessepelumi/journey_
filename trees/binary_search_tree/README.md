@@ -44,14 +44,14 @@ Different implementations handle duplicates differently:
 
 ## Common Operations
 
-| Operation | Description | Average | Worst |
-|-----------|-------------|---------|-------|
-| **Search** | Find a value | O(log n) | O(n) |
-| **Insert** | Add a value | O(log n) | O(n) |
-| **Delete** | Remove a node | O(log n) | O(n) |
-| **Traversal** | Visit all nodes | O(n) | O(n) |
-| **Min** | Find minimum | O(log n) | O(n) |
-| **Max** | Find maximum | O(log n) | O(n) |
+| Operation     | Description     | Average  | Worst |
+| ------------- | --------------- | -------- | ----- |
+| **Search**    | Find a value    | O(log n) | O(n)  |
+| **Insert**    | Add a value     | O(log n) | O(n)  |
+| **Delete**    | Remove a node   | O(log n) | O(n)  |
+| **Traversal** | Visit all nodes | O(n)     | O(n)  |
+| **Min**       | Find minimum    | O(log n) | O(n)  |
+| **Max**       | Find maximum    | O(log n) | O(n)  |
 
 ## Deletion Cases
 
@@ -68,11 +68,11 @@ If the tree becomes unbalanced (e.g., sorted insertion), operations degrade to *
 
 ## Balanced vs Unbalanced
 
-| Scenario | Tree Shape | Time Complexity |
-|----------|------------|-----------------|
-| Random insertion | Balanced | O(log n) |
-| Sorted insertion | Degenerates to line | O(n) |
-| Random deletion | Balanced | O(log n) |
+| Scenario         | Tree Shape          | Time Complexity |
+| ---------------- | ------------------- | --------------- |
+| Random insertion | Balanced            | O(log n)        |
+| Sorted insertion | Degenerates to line | O(n)            |
+| Random deletion  | Balanced            | O(log n)        |
 
 ## Advantages
 

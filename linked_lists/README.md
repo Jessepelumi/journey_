@@ -58,21 +58,21 @@ The last node points back to the first, forming a circle. Can be singly or doubl
 
 ## Time Complexity
 
-| Operation | Singly | Doubly |
-|-----------|--------|--------|
-| Search | O(n) | O(n) |
-| Insert at Head | O(1) | O(1) |
-| Insert at Tail | O(1)* | O(1)* |
-| Delete at Head | O(1) | O(1) |
-| Delete at Tail | O(n) | O(1) |
+| Operation      | Singly | Doubly |
+| -------------- | ------ | ------ |
+| Search         | O(n)   | O(n)   |
+| Insert at Head | O(1)   | O(1)   |
+| Insert at Tail | O(1)\* | O(1)\* |
+| Delete at Head | O(1)   | O(1)   |
+| Delete at Tail | O(n)   | O(1)   |
 
-*With tail pointer
+\*With tail pointer
 
 ## Advantages vs Arrays
 
-| Aspect | Linked List | Array |
-|--------|-------------|-------|
-| Insertion/Deletion | O(1) | O(n) |
-| Random Access | O(n) | O(1) |
-| Memory | Dynamic | Fixed |
-| Cache Friendly | No | Yes |
+| Aspect             | Linked List | Array |
+| ------------------ | ----------- | ----- |
+| Insertion/Deletion | O(1)        | O(n)  |
+| Random Access      | O(n)        | O(1)  |
+| Memory             | Dynamic     | Fixed |
+| Cache Friendly     | No          | Yes   |

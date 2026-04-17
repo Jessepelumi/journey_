@@ -36,35 +36,35 @@ An **AVL Tree** is a self-balancing Binary Search Tree that maintains O(log n) w
 
 ### Single Rotations
 
-| Rotation | Trigger | Description |
-|----------|---------|-------------|
-| **Right Rotation** | Left-left imbalance | Left child is heavy |
-| **Left Rotation** | Right-right imbalance | Right child is heavy |
+| Rotation           | Trigger               | Description          |
+| ------------------ | --------------------- | -------------------- |
+| **Right Rotation** | Left-left imbalance   | Left child is heavy  |
+| **Left Rotation**  | Right-right imbalance | Right child is heavy |
 
 ### Double Rotations
 
-| Rotation | Trigger | Description |
-|----------|---------|-------------|
+| Rotation            | Trigger              | Description                         |
+| ------------------- | -------------------- | ----------------------------------- |
 | **Left-Right (LR)** | Left-right imbalance | Left child's right subtree is heavy |
 | **Right-Left (RL)** | Right-left imbalance | Right child's left subtree is heavy |
 
 ## Time Complexity
 
-| Operation | Time Complexity |
-|-----------|-----------------|
-| Search | O(log n) |
-| Insert | O(log n) |
-| Delete | O(log n) |
-| Get Height | O(1) |
+| Operation  | Time Complexity |
+| ---------- | --------------- |
+| Search     | O(log n)        |
+| Insert     | O(log n)        |
+| Delete     | O(log n)        |
+| Get Height | O(1)            |
 
 ## vs Regular BST
 
-| Aspect | Regular BST | AVL Tree |
-|--------|-------------|----------|
-| Worst Case | O(n) | O(log n) |
-| Average Case | O(log n) | O(log n) |
-| Memory | Lower | Higher (height tracking) |
-| Insert/Delete | Faster | Slightly slower (rotations) |
+| Aspect        | Regular BST | AVL Tree                    |
+| ------------- | ----------- | --------------------------- |
+| Worst Case    | O(n)        | O(log n)                    |
+| Average Case  | O(log n)    | O(log n)                    |
+| Memory        | Lower       | Higher (height tracking)    |
+| Insert/Delete | Faster      | Slightly slower (rotations) |
 
 ## Insertion Process
 

@@ -36,23 +36,23 @@ A **Tree** is a hierarchical (non-linear) data structure with no cycles. It repr
 
 ## Tree Properties
 
-| Property | Description |
-|----------|-------------|
-| **Nodes** | Total number of elements |
-| **Edges** | Total number of connections (n-1 for connected tree) |
-| **Height** | Maximum depth from root to leaf |
-| **Degree** | Maximum number of children any node has |
+| Property   | Description                                          |
+| ---------- | ---------------------------------------------------- |
+| **Nodes**  | Total number of elements                             |
+| **Edges**  | Total number of connections (n-1 for connected tree) |
+| **Height** | Maximum depth from root to leaf                      |
+| **Degree** | Maximum number of children any node has              |
 
 ## Types of Trees
 
-| Type | Description |
-|------|-------------|
-| **Binary Tree** | Each node has at most 2 children |
+| Type                   | Description                                 |
+| ---------------------- | ------------------------------------------- |
+| **Binary Tree**        | Each node has at most 2 children            |
 | **Binary Search Tree** | Ordered binary tree (left < parent < right) |
-| **AVL Tree** | Self-balancing BST |
-| **B-Tree** | Self-balancing for databases |
-| **Trie** | Prefix tree for strings |
-| **Heap** | Complete tree with heap property |
+| **AVL Tree**           | Self-balancing BST                          |
+| **B-Tree**             | Self-balancing for databases                |
+| **Trie**               | Prefix tree for strings                     |
+| **Heap**               | Complete tree with heap property            |
 
 ## Common Operations
 
@@ -67,8 +67,8 @@ A **Tree** is a hierarchical (non-linear) data structure with no cycles. It repr
 ## Time Complexity (Balanced Tree)
 
 | Operation | Time Complexity |
-|-----------|-----------------|
-| Search | O(log n) |
-| Insert | O(log n) |
-| Delete | O(log n) |
-| Traversal | O(n) |
+| --------- | --------------- |
+| Search    | O(log n)        |
+| Insert    | O(log n)        |
+| Delete    | O(log n)        |
+| Traversal | O(n)            |

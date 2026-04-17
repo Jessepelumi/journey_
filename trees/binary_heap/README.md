@@ -5,6 +5,7 @@ A **Binary Heap** is a complete binary tree that satisfies the heap property. It
 ## Why Complete Tree?
 
 The complete tree structure ensures:
+
 - Efficient array storage (no wasted space)
 - **O(log n)** insert and delete operations
 - Balanced shape for consistent performance
@@ -55,21 +56,21 @@ For a node at index `i`:
 
 ## Key Operations
 
-| Operation | Description | Time Complexity |
-|-----------|-------------|-----------------|
-| **Insert** | Add to end, then bubble up | O(log n) |
-| **Extract Min/Max** | Remove root, replace with last, bubble down | O(log n) |
-| **Peek** | View root element | O(1) |
-| **Build Heap** | Create heap from array | O(n) |
+| Operation           | Description                                 | Time Complexity |
+| ------------------- | ------------------------------------------- | --------------- |
+| **Insert**          | Add to end, then bubble up                  | O(log n)        |
+| **Extract Min/Max** | Remove root, replace with last, bubble down | O(log n)        |
+| **Peek**            | View root element                           | O(1)            |
+| **Build Heap**      | Create heap from array                      | O(n)            |
 
 ## Time Complexity
 
-| Operation | Time Complexity |
-|-----------|-----------------|
-| Insert | O(log n) |
-| Extract Min/Max | O(log n) |
-| Peek | O(1) |
-| Build Heap | O(n) |
+| Operation       | Time Complexity |
+| --------------- | --------------- |
+| Insert          | O(log n)        |
+| Extract Min/Max | O(log n)        |
+| Peek            | O(1)            |
+| Build Heap      | O(n)            |
 
 ## Applications
 

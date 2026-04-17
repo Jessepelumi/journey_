@@ -22,9 +22,9 @@ A **Stack** is a linear data structure that follows **LIFO** (Last In First Out)
 
 ## Implementations
 
-| Implementation | Description |
-|----------------|-------------|
-| **Python Lists** | Array-based stack (push/pop at end) |
+| Implementation   | Description                            |
+| ---------------- | -------------------------------------- |
+| **Python Lists** | Array-based stack (push/pop at end)    |
 | **Linked Lists** | Pointer-based stack (push/pop at head) |
 
 ## Common Operations
@@ -39,11 +39,11 @@ A **Stack** is a linear data structure that follows **LIFO** (Last In First Out)
 ## Time Complexity
 
 | Operation | Time Complexity |
-|-----------|-----------------|
-| Push | **O(1)** |
-| Pop | **O(1)** |
-| Peek | **O(1)** |
-| is_empty | **O(1)** |
+| --------- | --------------- |
+| Push      | **O(1)**        |
+| Pop       | **O(1)**        |
+| Peek      | **O(1)**        |
+| is_empty  | **O(1)**        |
 
 ## Stack Applications
 
