@@ -91,7 +91,7 @@ Explores all neighbors at the current depth before moving deeper.
 
 ## Common Algorithms
 
-- **Dijkstra's Algorithm**: Shortest path in weighted graphs
+- **Dijks tra's Algorithm**: Shortest path in weighted graphs
 - **Bellman-Ford**: Shortest path with negative weights
 - **Floyd-Warshall**: All-pairs shortest path
 - **Topological Sort**: Ordering in DAGs
