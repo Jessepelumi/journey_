@@ -53,8 +53,11 @@ class Graph:
     
     # Graph traversal
     def bfs(self, v):
+        if v not in self.dict:
+            return []
+
         visited = set()
-        queue = deque([v])
+        queue = deque([v]) # double ended queue (O(1) pop operation)
         result = []
 
         visited.add(v)
@@ -69,14 +72,20 @@ class Graph:
                     queue.append(n)
 
         return result
+        # Time complexity: O(V+E) -> V (no. of vertices), E (no. of edges)
+        # Space O(V)
     
 
 # Usage
 graph = Graph()
 graph.add_vertex("A")
 graph.add_vertex("B")
+graph.add_vertex("C")
 graph.add_edge("A", "B")
+graph.add_edge("A", "C")
 
-graph.remove_vertex("B")
+# graph.remove_vertex("B")
 
-print(graph.dict)
+result = graph.bfs("A")
+
+print(result)
