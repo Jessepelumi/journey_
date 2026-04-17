@@ -1,25 +1,39 @@
-# Binary Search Tree
+# Binary Search Tree (BST)
 
-A Binary Search Tree (BST) is a binary tree with additional properties such as:
+A **BST** is a binary tree where each node follows the ordering property, enabling efficient search.
 
-For any given node N:
+## Ordering Property
 
-- **Left Subtree:** Every node in the left subtree must have a value less than (or equal) to the value of node N.
-- **Right Subtree:** Every node in the right subtree must have a value greater than (or equal to) the value of node N.
+For any node with value `N`:
 
-## A Note on Duplicates:
+- **Left subtree**: all values ≤ N
+- **Right subtree**: all values ≥ N
 
-Standard BST definitions often vary on how they handle equal values:
+This allows O(log n) average-case search by eliminating half the remaining tree at each step.
 
-- **Strict BST:** No duplicates allowed (Left < Parent < Right).
-- **Left-leaning Duplicates:** Duplicates go to the left (Left <= Parent < Right). 
-- **Right-leaning Duplicates:** Duplicates go to the right (Left < Parent <= Right).
+## Duplicates
 
-## Deleting a Node in a BST:
+Different implementations handle duplicates differently:
 
-1. **Leaf Node:** If the node to be deleted has no children, simply remove it from the tree.
-2. **Node with One Child:** If the node to be deleted has only one child, bypass the node by linking its parent directly to the child.
-3. **Node with Two Children:** If the node to be deleted has two children:
-    - Find the successor (the smallest node in the right subtree) or predecessor (the largest node in the left subtree).
-    - Replace the node with the successor/predecessor.
-    - Delete the successor/predecessor node, which will now be in one of the first two cases (leaf or one child).
+- **Strict BST**: no duplicates allowed (Left < Parent < Right)
+- **Left-leaning**: duplicates go left (Left ≤ Parent < Right)
+- **Right-leaning**: duplicates go right (Left < Parent ≤ Right)
+
+## Common Operations
+
+- **Search**: find a value — O(log n) average, O(n) worst
+- **Insert**: add a value while maintaining order — O(log n) average
+- **Delete**: remove a node — O(log n) average
+
+## Deletion Cases
+
+1. **Leaf node**: simply remove it
+2. **One child**: bypass the node (link parent directly to child)
+3. **Two children**:
+   - Find **successor** (smallest in right subtree) or **predecessor** (largest in left subtree)
+   - Replace node's value with successor/predecessor
+   - Delete the successor/predecessor (which will be case 1 or 2)
+
+## Worst Case
+
+If the tree becomes unbalanced (e.g., sorted insertion), operations degrade to **O(n)**. Use self-balancing trees (AVL, Red-Black) to maintain O(log n).

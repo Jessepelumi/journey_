@@ -1,38 +1,39 @@
 # Binary Heap
 
-A binary heap is a type of binary tree that satisfies specific structural and ordering properties.
+A **Binary Heap** is a complete binary tree that satisfies the heap property. It is primarily used to implement **priority queues**.
 
-### Properties of a Binary Heap
+## Why Complete Tree?
 
-1. It is a **complete** binary tree
-    A binary heap must be a complete binary tree.
-        1. Every level of the tree is completely filled 
-        2. Except possibly the last level
-        3. The last level is filled from left to right.
+The complete tree structure ensures the heap can be stored efficiently in an array without wasted space, and enables **O(log n)** insert and delete operations by maintaining a balanced shape.
 
-2. It must follow the **Heap Property**
-    A binary tree must satisfy one of the following heap properties.
-        1. **Min Heap:** Every parent node is less than or equal to its children -> parent <= children
-        2. **Max Heap:** Every parent node is greater than or equal to its children -> parent >= children
+## Properties
 
-3. Stored in an array
-    Binary heaps are usually implemented using an array rather than pointers.
+1. **Complete Tree**: All levels filled except possibly the last, which fills left to right. This makes it suitable for array storage.
 
+2. **Heap Property**:
+   - **Min Heap**: parent ≤ children (smallest element at root)
+   - **Max Heap**: parent ≥ children (largest element at root)
 
-### Applications of Binary Heap
+3. **Array Storage**: Typically implemented using an array for cache-friendly access.
 
-Binary heap are commonly used to implement **Priority Queues**. 
+## Array Index Formulas (0-based)
 
-Common applications include:
-    1. CPU scheduling
-    2. Task scheduling
-    3. Dijkstra's algorithm
-    4. A* pathfinding
-    5. Event simulations.
+For a node at index `i`:
 
-### Array implementation of Binary Heap
-When implementing a binary heap using a 0-based index array, the given formula is used:
-Left child: 2 * i + 1
-Right child: 2 * i + 2
-Parent: (i - 1) // 2
-    
+- Left child: `2 * i + 1`
+- Right child: `2 * i + 2`
+- Parent: `(i - 1) // 2`
+
+## Key Operations
+
+- **Insert**: Add to end, then "bubble up" to maintain heap property — **O(log n)**
+- **Extract Min/Max**: Remove root, replace with last element, then "bubble down" — **O(log n)**
+- **Peek**: View root element — **O(1)**
+
+## Applications
+
+- Priority queues
+- CPU/task scheduling
+- Dijkstra's algorithm (with min-heap)
+- Heap sort
+- Finding kth smallest/largest elements

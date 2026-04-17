@@ -1,16 +1,24 @@
-## Tree Data Structure 
+# Tree Data Structure
 
-A tree is a non-linear data structure that represents hierarchical relationships between elements and contains no cycles. A common real-life example is a family tree.
+A **Tree** is a hierarchical (non-linear) data structure with no cycles. It represents parent-child relationships.
 
-#### Properties:
-- Represent hierarchical data.
-- Each node contains data and references (links) to its child nodes.
-- It consists of a root node and subtrees of children nodes.
+## Real-world Examples
 
-**Root:** The top node with no parent.
-**Edge:** The connection between a parent and child node.
-**Leaf:** A node with no children.
-**Siblings:** Nodes that share the same parent.
-**Ancestor:** A parent, grandparent, or any predecessor of a node.
-**Depth of Node:** The number of edges from the root to that node.
-**Height of Tree:** The maximum number of edges from the root to any leaf.
+- Family tree
+- Organizational chart
+- File system (folders and files)
+- XML/HTML document structure
+
+## Key Terminology
+
+- **Root**: top node with no parent
+- **Edge**: connection between parent and child
+- **Leaf**: node with no children (terminal node)
+- **Siblings**: nodes sharing the same parent
+- **Ancestor**: any predecessor of a node (parent, grandparent, etc.)
+- **Descendant**: any node below a given node (child, grandchild, etc.)
+- **Subtree**: a node and all its descendants
+- **Path**: sequence of edges from one node to another
+- **Depth**: number of edges from root to a node
+- **Height**: maximum edges from root to any leaf
+- **Degree**: number of children a node has
