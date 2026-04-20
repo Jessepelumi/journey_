@@ -146,6 +146,8 @@ class Graph:
                     queue.append(adjacent)
 
         return None
+        # Time complexity: O(V + E)
+        # Space complexity: O(V)
 
 # Usage
 graph = Graph()
