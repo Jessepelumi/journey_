@@ -98,7 +98,54 @@ class Graph:
         return result
         # Time complexity: O(V+E) -> V (no. of vertices), E (no. of edges)
         # Space O(V)
+
+    # Topological sort
+    # Helper function
+    def topological_sort_helper(self, v, visited: list, stack: list):
+        visited.append(v)
+
+        for n in self.dict[v]:
+            if n not in visited:
+                self.topological_sort_helper(n, visited, stack)
+
+        stack.insert(0, v)
+
+    def topological_sort(self):
+        visited = []
+        stack = []
+
+        for k in self.dict:
+            if k not in visited:
+                self.topological_sort_helper(k, visited, stack)
+
+        return stack
     
+    # Single Source Shortest Path Problems
+    # BFS
+    # Dijkstra's Algorithm
+    # Bellman Ford Algorithm
+
+    # BFS SSSP
+    def bfs(self, start, end):
+        queue = deque([start])
+        parent_map = {start: None}
+
+        while queue:
+            node = queue.popleft()
+
+            if node == end:
+                path = []
+                while node is not None:
+                    path.append(node)
+                    node = parent_map[node]
+                return path[::-1]
+
+            for adjacent in self.dict.get(node, []):
+                if adjacent not in parent_map:
+                    parent_map[adjacent] = node
+                    queue.append(adjacent)
+
+        return None
 
 # Usage
 graph = Graph()
@@ -107,9 +154,14 @@ graph.add_vertex("B")
 graph.add_vertex("C")
 graph.add_edge("A", "B")
 graph.add_edge("A", "C")
+graph.add_vertex("D")
+graph.add_edge("D", "C")
+graph.add_edge("D", "B")
 
 # graph.remove_vertex("B")
 
 result = graph.bfs("A")
 
 print(result)
+print(graph.topological_sort())
+print(graph.dict)
